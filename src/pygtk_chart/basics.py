@@ -30,7 +30,8 @@ import os
 
 import pygtk_chart
 
-def is_in_range(x, (xmin, xmax)):
+def is_in_range(x, r):
+    xmin, xmax = r
     """
     Use this method to test whether M{xmin <= x <= xmax}.
     

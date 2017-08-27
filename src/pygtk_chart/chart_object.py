@@ -72,7 +72,7 @@ class ChartObject(gobject.GObject):
         elif property.name == "antialias":
             return self._antialias
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -80,7 +80,7 @@ class ChartObject(gobject.GObject):
         elif property.name == "antialias":
             self._antialias = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect):
         """

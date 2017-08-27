@@ -197,7 +197,7 @@ class PieChart(chart.Chart):
         elif property.name == "enable-mouseover":
             return self._enable_mouseover
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "rotate":
@@ -215,7 +215,7 @@ class PieChart(chart.Chart):
         elif property.name == "enable-mouseover":
             self._enable_mouseover = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def _cb_appearance_changed(self, widget):
         self.queue_draw()

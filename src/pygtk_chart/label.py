@@ -214,7 +214,7 @@ class Label(ChartObject):
         elif property.name == "wrap":
             return self._wrap
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -246,7 +246,7 @@ class Label(ChartObject):
         elif property.name == "wrap":
             self._wrap = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect):
         self._do_draw_label(context, rect)

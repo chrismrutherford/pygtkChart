@@ -552,7 +552,7 @@ class Axis(ChartObject):
         elif property.name == "logarithmic":
             return self._logarithmic
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -574,7 +574,7 @@ class Axis(ChartObject):
         elif property.name == "logarithmic":
             self._logarithmic = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def set_label(self, label):
         """
@@ -943,7 +943,7 @@ class Grid(ChartObject):
         elif property.name == "line-style-vertical":
             return self._line_style_v
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -961,7 +961,7 @@ class Grid(ChartObject):
         elif property.name == "line-style-vertical":
             self._line_style_v = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def _do_draw(self, context, rect, xaxis, yaxis):
         context.set_source_rgb(*color_gdk_to_cairo(self._color))
@@ -1251,7 +1251,7 @@ class Graph(ChartObject):
         elif property.name == "show-yerrors":
             return self._draw_yerrors
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -1288,7 +1288,7 @@ class Graph(ChartObject):
         elif property.name == "show-yerrors":
             self._draw_yerrors = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def has_something_to_draw(self):
         return self._data != []
@@ -2028,7 +2028,7 @@ class Legend(ChartObject):
         elif property.name == "position":
             return self._position
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -2038,7 +2038,7 @@ class Legend(ChartObject):
         elif property.name == "position":
             self._position = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect, graphs):
         context.set_line_width(1)

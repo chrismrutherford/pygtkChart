@@ -114,13 +114,13 @@ class Chart(gtk.DrawingArea):
         if property.name == "padding":
             return self._padding
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "padding":
             self._padding = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _cb_appearance_changed(self, object):
         """
@@ -308,7 +308,7 @@ class Background(ChartObject):
         elif property.name == "image":
             return self._image
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -322,7 +322,7 @@ class Background(ChartObject):
         elif property.name == "image":
             self._image = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect):
         """
@@ -504,7 +504,7 @@ class Area(ChartObject):
         elif property.name == "highlighted":
             return self._highlighted
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -520,7 +520,7 @@ class Area(ChartObject):
         elif property.name == "highlighted":
             self._highlighted = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def set_value(self, value):
         """

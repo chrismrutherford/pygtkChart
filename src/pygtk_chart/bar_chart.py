@@ -115,7 +115,7 @@ class Bar(chart.Area):
         elif property.name == "corner-radius":
             return self._corner_radius
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -133,7 +133,7 @@ class Bar(chart.Area):
         elif property.name == "corner-radius":
             self._corner_radius = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect, n, i, mode, max_value, bar_padding, value_label_size, label_size, draw_labels):
         if mode == MODE_VERTICAL:
@@ -308,7 +308,7 @@ class Grid(ChartObject):
         elif property.name == "padding":
             return self._padding
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -324,7 +324,7 @@ class Grid(ChartObject):
         elif property.name == "padding":
             self._padding = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
         
     def _do_draw(self, context, rect, mode, maximum_value, value_label_size, label_size):
         n = maximum_value / (10 ** int(math.log10(maximum_value)))
@@ -534,7 +534,7 @@ class BarChart(chart.Chart):
         elif property.name == "enable-mouseover":
             return self._mouseover
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
 
     def do_set_property(self, property, value):
         if property.name == "padding":
@@ -548,7 +548,7 @@ class BarChart(chart.Chart):
         elif property.name == "enable-mouseover":
             self._mouseover = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
     
     #drawing methods
     def draw(self, context):

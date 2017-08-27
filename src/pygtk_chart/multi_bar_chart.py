@@ -241,7 +241,7 @@ class BarGroup(ChartObject):
         elif property.name == "bar-count":
             return len(self._bars)
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def do_set_property(self, property, value):
         if property.name == "visible":
@@ -255,7 +255,7 @@ class BarGroup(ChartObject):
         elif property.name == "bar-padding":
             self._bar_padding = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def get_bar_count(self):
         """
@@ -480,7 +480,7 @@ class MultiBarChart(bar_chart.BarChart):
         elif property.name == "enable-mouseover":
             return self._mouseover
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def do_set_property(self, property, value):
         if property.name == "group-padding":
@@ -496,7 +496,7 @@ class MultiBarChart(bar_chart.BarChart):
         elif property.name == "enable-mouseover":
             self._mouseover = value
         else:
-            raise AttributeError, "Property %s does not exist." % property.name
+            raise (AttributeError, "Property %s does not exist." % property.name)
             
     def set_group_padding(self, padding):
         """
@@ -645,5 +645,5 @@ class MultiBarChart(bar_chart.BarChart):
         Alias for add_group.
         This method is deprecated. Use add_group instead.
         """
-        print "MultiBarChart.add_bar is deprecated. Use add_group instead."
+        print ("MultiBarChart.add_bar is deprecated. Use add_group instead.")
         self.add_group(bar)
